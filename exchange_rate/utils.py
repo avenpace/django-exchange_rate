@@ -20,9 +20,8 @@ def get_exchange_currency(currency_symbol, base_currency=None):
         if currency_symbol == raw['title_detail']['value'].split('/')[0]:
             _raw = raw['summary'].split('=')[1]
             return _raw.split(' ')[1]
-        break
 
-def get_exchange_currency_entries():
+def get_exchange_currency_entries(base_currency=None):
     '''
     We are grabbing latest exchange currency entries from themoneyconverter.com
     Please change BASE_CURRENCY accordingly
@@ -32,5 +31,7 @@ def get_exchange_currency_entries():
     #if base_currency:
     #  CURRENCY_FEED_LINK = 'http://themoneyconverter.com/%s/rss.xml' % base_currency
     feed_exchange = feedparser.parse(settings.CURRENCY_FEED_LINK)
+    if base_currency:
+        feed_exchange = feedparser.parse('http://themoneyconverter.com/%s/rss.xml' % base_currency)
     return feed_exchange['entries']
 

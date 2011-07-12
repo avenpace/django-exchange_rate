@@ -6,7 +6,12 @@ from exchange_rate.models import ExchangeRate
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-      for raw_currency in get_exchange_currency_entries():
+      entries = get_exchange_currency_entries()
+      try:
+          entries = get_exchange_currency_entries(args[0])
+      except:
+          pass
+      for raw_currency in entries:
             other_currency = raw_currency['title_detail']['value'].split('/')[0]
             base_currency = raw_currency['title_detail']['value'].split('/')[1]
             b_raw = raw_currency['summary'].split('=')[0].split(' ')
