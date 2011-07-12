@@ -19,5 +19,4 @@ Installation
 - There's a command 'feed_exchange_rate' that will filled exchange_rate.models.ExchangeRate with all current currency exchange rate
   against base currency that you can define at BASE_CURRENCY on your settings.py
 - You can put base currency symbol for 'feed_exchange_rate' on the first argument, ie: 'manage.py feed_exchange_rate USD' will feed all foreign exchange rate from US Dollar
-- There is templatetag that will give you realtime currency exchange, to use this put '{% load exchange_rate %}' on first template line 
-  While to get currency exchange rate, use '{% get_exchange_rate currency_symbol, base_currency_symbol %}
+- There is templatetag that will give you realtime currency exchange, to use this put '{% load exchange_rate %}' on first template line, while to get currency exchange rate, use '{% get_exchange_rate currency_symbol base_currency_symbol %}
