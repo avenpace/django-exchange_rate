@@ -22,7 +22,7 @@ DATABASES = {
 
 #currency_exchange variables
 BASE_CURRENCY = 'USD'
-CURRENCY_FEED_LINK = 'http://themoneyconverter.com/%s/rss.xml' % BASE_CURRENCY
+USE_CURRENCY_CACHE = True
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

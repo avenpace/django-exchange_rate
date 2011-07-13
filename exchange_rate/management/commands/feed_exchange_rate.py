@@ -1,4 +1,4 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 
 from exchange_rate.utils import get_exchange_currency_entries
 from exchange_rate.models import ExchangeRate
